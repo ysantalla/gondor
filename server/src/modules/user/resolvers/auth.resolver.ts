@@ -21,7 +21,6 @@ export class AuthResolver {
   ) {}
 
   @Query('me')
-  @Roles('USER')
   @UseGuards(AuthGuard)
   async me(
     @Context('token') token: string,
@@ -152,6 +151,7 @@ export class AuthResolver {
   }
 
   @Mutation('changePassword')
+  @UseGuards(AuthGuard)
   async changePassword(
     @Parent() parant: any,
     @Context('token') token: string,
@@ -188,6 +188,7 @@ export class AuthResolver {
   }
 
   @Mutation('profile')
+  @UseGuards(AuthGuard)
   async profile(
     @Parent() parant: any,
     @Context('token') token: string,

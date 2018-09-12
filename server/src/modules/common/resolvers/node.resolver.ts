@@ -6,12 +6,11 @@ export class NodeResolver {
   constructor(
   ) { }
 
-  @ResolveProperty('id')
+  @ResolveProperty('__resolveType')
   __resolveType(obj) {
-    console.log(obj);
     if (obj.firstname) {
-      return 'LoginFailure';
+      return 'User';
     }
-    return 'LoginSuccess';
+    return 'Not found';
   }
 }

@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "dotenv -- node dist/main.js",
-    "dev": "dotenv -e .env.dev -- nodemon -e ts,graphql -x ts-node src/main.ts",    
+    "dev": "dotenv -e .env.dev -- nodemon -e ts,graphql -x ts-node src/main.ts",
     "debug": "dotenv -e .env.dev -- nodemon -e ts,graphql -x ts-node --inspect src/main.ts",
     "build": "npm run clean && graphql codegen && tsc",
     "clean": "rm -rf ./dist",
@@ -33,6 +33,7 @@
     "shortid": "^2.2.13"
   },
   "devDependencies": {
+    "@nestjs/testing": "^5.3.1",
     "@types/bcryptjs": "^2.4.1",
     "@types/graphql": "^14.0.0",
     "@types/jsonwebtoken": "^7.2.8",
