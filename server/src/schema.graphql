@@ -1,0 +1,134 @@
+# import Node, DateTime, BatchPayload from "./generated/prisma.graphql"
+
+# import UserCreateInput, UserUpdateInput, UserWhereUniqueInput, UserWhereInput, UserOrderByInput, UserConnection, UserSubscriptionPayload from "./generated/prisma.graphql"
+# import Role, RoleCreateInput, RoleUpdateInput, RoleWhereUniqueInput, RoleConnection ,RoleSubscriptionPayload from "./generated/prisma.graphql"
+# import File, FileCreateInput, FileUpdateInput, FileWhereUniqueInput, FileConnection, FileSubscriptionPayload from "./generated/prisma.graphql"
+
+scalar Upload
+scalar JSON
+scalar Date
+
+type User implements Node {
+  id: ID!
+  email: String!
+  firstname: String!
+  lastname: String!
+  birthdate: Date!
+  sex: String!
+  roles: [Role!]!
+}
+
+input UserSignupInput {
+  email: String!
+  password: String!
+  firstname: String!
+  lastname: String!
+  birthdate: Date!
+  sex: String!
+}
+
+input UserProfileInput {
+  email: String!
+  firstname: String!
+  lastname: String!
+  birthdate: Date!
+  sex: String!
+}
+
+input UserChangePasswordInput {
+  oldPassword: String!
+  newPassword: String!
+}
+
+type Query {
+  me: User!
+  user(id: String!): User!
+  users(
+    where: UserWhereInput
+    orderBy: UserOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [User!]!
+  usersConnection(
+    where: UserWhereInput
+    orderBy: UserOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): UserConnection!
+  role(id: String!): Role!
+  roles(
+    where: RoleWhereInput
+    orderBy: RoleOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Role!]!
+  rolesConnection(
+    where: RoleWhereInput
+    orderBy: RoleOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): RoleConnection!
+  file(id: String!): File!
+  files(
+    where: FileWhereInput
+    orderBy: FileOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [File!]!
+  filesConnection(
+    where: FileWhereInput
+    orderBy: FileOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): FileConnection!
+}
+
+type Mutation {
+  signup(data: UserSignupInput!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+  profile(data: UserProfileInput!): AuthPayload!
+  changePassword(data: UserChangePasswordInput!): User!
+
+  createUser(data: UserCreateInput!): User!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+  deleteUser(where: UserWhereUniqueInput!): User
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+
+  createRole(data: RoleCreateInput!): Role!
+  updateRole(data: RoleUpdateInput!, where: RoleWhereUniqueInput!): Role
+  deleteRole(where: RoleWhereUniqueInput!): Role
+  deleteManyRoles(where: RoleWhereInput): BatchPayload!
+
+  uploadFile(file: Upload!): File!
+  uploadFiles(files: [Upload!]!): [File!]!
+  changeFile(file: Upload!, where: FileWhereUniqueInput!): File
+  deleteFile(where: FileWhereUniqueInput!): File
+  deleteManyFiles(where: FileWhereInput): BatchPayload!
+}
+
+type Subscription {
+  userSubscription: UserSubscriptionPayload!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}

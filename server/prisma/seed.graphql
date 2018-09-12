@@ -1,0 +1,18 @@
+mutation {
+  createUser(
+    data: {
+      email: "admin@gmail.com"
+      password: "$2a$10$hACwQ5/HQI6FhbIISOUVeusy3sKyUDhSq36fF5d/54aAdiygJPFzm" # plaintext password: "nooneknows"
+      firstname: "ADMIN"
+      lastname: "Admin user"
+      sex: MALE
+      birthdate: "1988-09-19"
+      roles: { create: { name: "ADMIN", description: "ADMIN ROLE" } }
+    }
+  ) {
+    id
+  }
+  user: createRole(data: { name: "USER", description: "USER ROLE" }) {
+    id
+  }
+}

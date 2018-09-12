@@ -1,0 +1,31 @@
+type User {
+  id: ID! @unique
+  email: String! @unique
+  password: String
+  firstname: String!
+  lastname: String!
+  birthdate: DateTime!
+  sex: Sexs!
+  roles: [Role!]! @relation(name: "Authorization")
+}
+
+enum Sexs {
+  MALE
+  FEMALE
+}
+
+type Role {
+  id: ID! @unique
+  name: String! @unique
+  description: String
+  users: [User!]! @relation(name: "Authorization")
+}
+
+type File {
+  id: ID! @unique
+  path: String!
+  filename: String!
+  mimetype: String!
+  encoding: String!
+  size: Int!
+}

@@ -1,0 +1,29 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$primary: mat-palette($mat-indigo, 800, 300, 900);
+$accent: mat-palette($mat-light-blue);
+
+.grid-container {
+  padding: 20px;
+}
+
+.dashboard-card {
+  margin: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.dashboard-card {
+  border-left: 6px solid mat-color($accent);
+}
+
+.dashboard-card:hover {
+  border-left: 6px solid mat-color($primary);
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  cursor: pointer;
+}

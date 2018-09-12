@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$primary: mat-palette($mat-indigo, 800, 300, 900);
+$accent: mat-palette($mat-light-blue);
+$warn: mat-palette($mat-deep-orange, A200);
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+$custom-typography: mat-typography-config(
+    $font-family: 'Roboto, monospace',
+    $headline: mat-typography-level(32px, 48px, 700),
+    $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+mat-form-field.mat-form-field {
+  font-size: 18px;
+}
+
+.menu {
+  border-left: 4px solid mat-color($accent);
+}
+
+.active {
+  border-left: 4px solid mat-color($primary);
+}
+
+.mat-warn {
+  color: mat-color($warn);
+}
+
+.mat-accent {
+  color: mat-color($accent);
+}
+
+div.container > div.loading, div.loading {
+  height: 10px;
+}
+
+.info {
+  padding: 1%;
+}
+
+.loading-shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 200;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.create-button {
+  z-index: 1024;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.table-footer {
+  background-color: white;
+  padding: 3px 3px 7px 7px;
+}
+
+/*Define the @font-face Material Icons*/
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/MaterialIcons-Regular.eot'); /* For IE6-8 */
+    src: local('assets/fonts/Material Icons'),
+        local('assets/fonts/MaterialIcons-Regular'),
+        url('assets/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+        url('assets/fonts/MaterialIcons-Regular.woff') format('woff'),
+        url('assets/fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/* Rules for sizing the icon.*/
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background*/
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background.*/
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }

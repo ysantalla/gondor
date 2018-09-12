@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+package-lock.json
+
+# IDE
+/.idea
+/.awcache
+/.vscode
+
+# misc
+npm-debug.log
+
+# example
+/quick-start
+
+# tests
+/test
+/coverage
+/.nyc_output
+
+# dist
+/dist
+
+# Uploads folder
+/uploads

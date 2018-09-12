@@ -1,0 +1,42 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Pizarra de Administración</h1>
+
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center">
+    <div class="item" fxFlex="20%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card" routerLink="/admin/user">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Usuarios</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-users></app-count-users>
+          </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="item" fxFlex="20%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card"  routerLink="/admin/role">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Roles</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-roles></app-count-roles>
+          </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="item" fxFlex="20%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card"  routerLink="/admin/file">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Archivos</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-files></app-count-files>
+          </mat-card-content>
+        </mat-card>
+    </div>
+  </div>
+</div>
