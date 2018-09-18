@@ -20,7 +20,6 @@ Nest is a framework for building efficient, scalable Node.js server-side applica
 * cd server && npm install
 * docker-compose up -d
 * npm run prisma deploy
-* npm run prisma seed
 * npm run dev
 * cd client && npm install
 * npm run ng serve
@@ -34,4 +33,12 @@ Nest is a framework for building efficient, scalable Node.js server-side applica
 
 * Email -> admin@gmail.com
 * Password -> nooneknows
+
+# Roadmap
++ [x] Authentication (JWT)
++ [x] Apollo Server 2
++ [x] Realtime subscription
++ [x] Prisma Graphql
++ [X] File upload via graphql
+
 

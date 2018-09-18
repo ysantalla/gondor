@@ -26,5 +26,6 @@ export class RolesGuard implements CanActivate {
         return true;
     }
     throw new AuthenticationError('Not valid role');
+    return false;
   }
 }

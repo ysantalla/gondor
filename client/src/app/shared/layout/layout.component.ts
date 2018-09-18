@@ -116,7 +116,7 @@ import { environment as env } from '@env/environment';
 
           <footer class="footer">
             <mat-toolbar color="primary">
-              <span>{{appName}} &#169; {{year}} - Todos los Derechos Reservados</span>
+              <span class="signature">{{appName}} &#169; {{year}} - Todos los Derechos Reservados</span>
             </mat-toolbar>
           </footer>
         </div>
